@@ -42,7 +42,7 @@
     }],
     "name": "validator",
     "taskOwnerEmail": "michael.gleason@digitalglobe.com",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "WARNING: THIS TASK IS EXPERIMENTAL AND HAS NOT BEEN ROBUSTLY TESTED. Given a source test dataset (geojson or shp) and truth dataset (geojson or shp), this task will output a csv with precision and recall statistics, and optionally intersect over union. Inputs must be of geometry type polygons. For more information about this task, please contact Mike Gleason (michael.gleason@digitalglobe.com).",
     "properties": {
         "isPublic": true,
