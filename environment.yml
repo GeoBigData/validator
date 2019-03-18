@@ -1,0 +1,22 @@
+# environment.yml
+name: validator
+channels: !!python/tuple
+- !!python/unicode
+  'conda-forge'
+- !!python/unicode
+  'digitalglobe'
+- !!python/unicode
+  'defaults'
+dependencies:
+- conda-forge::python=3.6.6
+- conda-forge::shapely
+- conda-forge::rtree
+- conda-forge::numpy
+- conda-forge::pandas
+- conda-forge::gdal
+- conda-forge::pyproj
+- digitalglobe::gbdxtools
+- pip:
+  - fiona
+  - geopandas
+  - click

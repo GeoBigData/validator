@@ -1,0 +1,51 @@
+{
+    "inputPortDescriptors": [
+        {
+            "required": true,
+            "type": "directory",
+            "description": "Directory holding the input test polygon dataset. Must be a .geojson or .shp.",
+            "name": "test"
+        },
+        {
+            "required": true,
+            "type": "directory",
+            "description": "Directory holding the input truth polygon dataset. Must be a .geojson or .shp.",
+            "name": "truth"
+        },
+        {
+            "required": false,
+            "type": "string",
+            "description": "Output name for csv. Default: 'results.csv'.",
+            "name": "out_csv"
+        },
+        {
+            "required": false,
+            "type": "string",
+            "description": "Option to include intersect over union, at the expense of slower run time. Default is: 'False'",
+            "name": "iou"
+        }
+    ],
+    "outputPortDescriptors": [
+        {
+            "required": true,
+            "type": "directory",
+            "description": "Directory holding output csv.",
+            "name": "data"
+        }
+    ],
+    "containerDescriptors": [{
+        "type": "DOCKER",
+        "command": "/opt/conda/envs/validator/bin/python /scripts/validator_task_runner.py",
+        "properties": {
+            "image": "mgleason/validator:latest"
+        }
+    }],
+    "name": "validator",
+    "taskOwnerEmail": "michael.gleason@digitalglobe.com",
+    "version": "0.0.1",
+    "description": "WARNING: THIS TASK IS EXPERIMENTAL AND HAS NOT BEEN ROBUSTLY TESTED. Given a source test dataset (geojson or shp) and truth dataset (geojson or shp), this task will output a csv with precision and recall statistics, and optionally intersect over union. Inputs must be of geometry type polygons. For more information about this task, please contact Mike Gleason (michael.gleason@digitalglobe.com).",
+    "properties": {
+        "isPublic": true,
+        "timeout": 36000
+    }
+}
